@@ -4,6 +4,7 @@ import { todoList } from "../index.js";
 const todosContainer = document.querySelector(".todo-items");
 const form = document.querySelector(".form-container");
 const itemsLength = document.querySelector(".items-length");
+const btnClearCompleted = document.querySelector(".clear-completed");
 
 // crear todos
 export const createItem = (todo) => {
@@ -23,11 +24,18 @@ export const createItem = (todo) => {
   return div.firstElementChild;
 };
 
+// optener id todo
 const getIdTodo = (target) => {
   const todoId =
     target.parentElement.parentElement.dataset.id ||
     target.parentElement.dataset.id;
   return todoId;
+};
+
+// contador todos
+const countTodos = () => {
+  itemsLength.textContent = "";
+  itemsLength.textContent = todoList.todos.length;
 };
 
 // agregar todos
@@ -42,9 +50,7 @@ form.addEventListener("submit", (e) => {
     createItem(todo);
     form.reset();
   }
-
-  itemsLength.textContent = "";
-  itemsLength.textContent = todoList.todos.length;
+  countTodos();
 });
 
 // marcar todo completado
@@ -80,6 +86,21 @@ todosContainer.addEventListener("click", (e) => {
     todosContainer.removeChild(todoItem);
   }
 
-  itemsLength.textContent = "";
-  itemsLength.textContent = todoList.todos.length;
+  countTodos();
+});
+
+btnClearCompleted.addEventListener("click", () => {
+  todoList.clearCompleted();
+
+  for (let i = todosContainer.children.length - 1; i >= 0; i--) {
+    const todoElement = todosContainer.children[i];
+
+    if (todoElement.classList.contains("check")) {
+      console.log("check element");
+      //   todosContainer.removeChild(todoElement);
+      todoElement.remove();
+    }
+  }
+
+  countTodos();
 });

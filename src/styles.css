@@ -400,7 +400,14 @@ body.dark #sun {
 .menu-todo span {
   font-size: var(--Font-size-small);
   color: var(--Light-Grayish-Blue);
+  transition: all 0.25s ease-in-out;
 }
+
+.menu-todo .clear-completed:hover {
+  color: var(--Dark-Grayish-Blue);
+  cursor: pointer;
+}
+
 .filter-container {
   width: 100%;
   padding: 1.5rem;
@@ -416,7 +423,14 @@ body.dark #sun {
   margin: 0 1rem;
   font-size: var(--Font-size-small);
   color: var(--Very-Dark-Grayish-Blue);
+  cursor: pointer;
+  transition: all 0.25s ease-in-out;
 }
+
+.filter-container .filter-todos li:hover {
+  color: var(--Light-Grayish-Blue);
+}
+
 .filter-container .filter-todos li:nth-child(1) {
   color: var(--Bright-Blue);
 }
@@ -469,6 +483,14 @@ body.dark .todo-item.check p {
 }
 
 body.dark .menu-todo span {
+  color: var(--Dark-Grayish-Blue);
+}
+
+body.dark .menu-todo .clear-completed:hover {
+  color: var(--Light-Grayish-Blue-hover);
+}
+
+body.dark .filter-container .filter-todos li:hover {
   color: var(--Dark-Grayish-Blue);
 }
 

@@ -18,5 +18,7 @@ export class TodoList {
     return;
   }
 
-  clearCompleted() {}
+  clearCompleted() {
+    this.todos = this.todos.filter((todo) => !todo.completed);
+  }
 }
