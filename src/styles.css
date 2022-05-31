@@ -443,6 +443,9 @@ body.dark {
 
 body.dark .header-container {
   background: url("https://i.imgur.com/AchbxoN.jpg");
+  background-size: cover;
+  background-position: top;
+  background-repeat: no-repeat;
 }
 
 body.dark .menu-todo,

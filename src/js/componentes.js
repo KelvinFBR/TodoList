@@ -10,7 +10,7 @@ const btnClearCompleted = document.querySelector(".clear-completed");
 export const createItem = (todo) => {
   const div = document.createElement("div");
   const taskItem = `
-    <li class="todo-item${todo.completed ? "check" : ""}" data-id="${todo.id}">
+    <li class="todo-item ${todo.completed ? "check" : ""}" data-id="${todo.id}">
         <span class="check-btn">
           <img src="./assets/img/icon/icon-check.svg" alt="check" />
         </span>
@@ -92,6 +92,7 @@ todosContainer.addEventListener("click", (e) => {
 btnClearCompleted.addEventListener("click", () => {
   todoList.clearCompleted();
 
+  // Este loops recorre los elementos del to
   for (let i = todosContainer.children.length - 1; i >= 0; i--) {
     const todoElement = todosContainer.children[i];
 
