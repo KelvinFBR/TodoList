@@ -19,7 +19,8 @@ export class Todo {
     this.created = new Date();
   }
 
-  imprimir() {
-    console.log(`task: ${this.task} - id: ${this.id}`);
-  }
+  //* Esta es una prueba para la implementacion de metodos de una instancia de un objeto enviado a localStorage y creando con el valos tomado de localStorage
+  //   imprimir() {
+  //     console.log(`task: ${this.task} - id: ${this.id}`);
+  //   }
 }

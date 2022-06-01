@@ -25,5 +25,3 @@ modeContainer.addEventListener("click", (e) => {
     document.body.classList.add("dark");
   }
 });
-
-console.log(todoList.todos);

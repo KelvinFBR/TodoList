@@ -5,6 +5,8 @@ const todosContainer = document.querySelector(".todo-items");
 const form = document.querySelector(".form-container");
 const itemsLength = document.querySelector(".items-length");
 const btnClearCompleted = document.querySelector(".clear-completed");
+const filtersContainer = document.querySelector(".filter-todos");
+const filterItems = document.querySelectorAll(".filter-todos li");
 
 // crear todos
 export const createItem = (todo) => {
@@ -97,11 +99,50 @@ btnClearCompleted.addEventListener("click", () => {
     const todoElement = todosContainer.children[i];
 
     if (todoElement.classList.contains("check")) {
-      console.log("check element");
       //   todosContainer.removeChild(todoElement);
       todoElement.remove();
     }
   }
 
   countTodos();
+});
+
+filtersContainer.addEventListener("click", (e) => {
+  const todosElements = document.querySelectorAll(".todo-items li");
+  const target = e.target;
+  const filterType = e.target.textContent;
+
+  const todosItems = todosContainer.children;
+
+  filterItems.forEach((element) => {
+    element.classList.remove("selected");
+  });
+  todosElements.forEach((element) => {
+    element.classList.remove("hidden");
+  });
+
+  for (let i = todosContainer.children.length - 1; i >= 0; i--) {
+    const todoElement = todosContainer.children[i];
+
+    switch (filterType) {
+      case "Active":
+        target.classList.add("selected");
+        if (todoElement.classList.contains("check")) {
+          todoElement.classList.add("hidden");
+        }
+        break;
+
+      case "Completed":
+        target.classList.add("selected");
+        if (!todoElement.classList.contains("check")) {
+          todoElement.classList.add("hidden");
+        }
+        break;
+
+      default:
+        target.classList.add("selected");
+        todoElement.classList.remove("hidden");
+        break;
+    }
+  }
 });

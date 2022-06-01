@@ -431,8 +431,12 @@ body.dark #sun {
   color: var(--Light-Grayish-Blue);
 }
 
-.filter-container .filter-todos li:nth-child(1) {
+.filter-container .filter-todos li.selected {
   color: var(--Bright-Blue);
+}
+
+li.hidden {
+  display: none;
 }
 
 /* dark mode style */
@@ -497,6 +501,10 @@ body.dark .filter-container .filter-todos li:hover {
   color: var(--Dark-Grayish-Blue);
 }
 
-body.dark .filter-container .filter-todos li:nth-child(1) {
+body.dark .filter-container .filter-todos li.selected {
   color: var(--Bright-Blue);
+}
+
+body.dark li.hidden {
+  display: none;
 }
