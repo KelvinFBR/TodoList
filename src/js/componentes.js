@@ -14,11 +14,11 @@ export const createItem = (todo) => {
   const taskItem = `
     <li class="todo-item ${todo.completed ? "check" : ""}" data-id="${todo.id}">
         <span class="check-btn">
-          <img src="./assets/img/icon/icon-check.svg" alt="check" />
+          <img src="./assets/icon/icon-check.svg" alt="check" />
         </span>
         <p class="text">${todo.task}</p>
         <span class="close">
-          <img src="./assets/img/icon/icon-cross.svg" alt="cross" />
+          <img src="./assets/icon/icon-cross.svg" alt="cross" />
         </span>
     </li>`;
   div.innerHTML = taskItem;
