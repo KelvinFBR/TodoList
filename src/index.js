@@ -14,14 +14,22 @@ const modeContainer = document.querySelector(".mode-container");
 // * tambien lo podemos hacer de una forma mas minificada no es necesario colocar el parametro y tampoco agragar el arrow function. Esto solo funciona si es un solo parametro.
 todoList.todos.forEach(createItem);
 
+//* cargar modo desde localStorage
+document.body.classList.add(localStorage.getItem("mode"));
+
 modeContainer.addEventListener("click", (e) => {
   const target = e.target;
+  let mode = "";
 
   if (target.matches("#sun")) {
     document.body.classList.remove("dark");
+    mode = "light";
+    localStorage.setItem("mode", mode);
   }
 
   if (target.matches("#moon")) {
     document.body.classList.add("dark");
+    mode = "dark";
+    localStorage.setItem("mode", mode);
   }
 });

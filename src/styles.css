@@ -439,6 +439,21 @@ li.hidden {
   display: none;
 }
 
+/* footer */
+
+.footer {
+  /* position: absolute; */
+  /* bottom: 0; */
+  width: 100%;
+  text-align: center;
+  padding: 1rem 0;
+}
+
+.footer__author {
+  font-size: var(--Font-size-small);
+  color: var(--Very-Dark-Grayish-Blue);
+}
+
 /* dark mode style */
 
 body.dark {
@@ -507,4 +522,8 @@ body.dark .filter-container .filter-todos li.selected {
 
 body.dark li.hidden {
   display: none;
+}
+
+body.dark .footer__author {
+  color: var(--Light-Grayish-Blue);
 }
